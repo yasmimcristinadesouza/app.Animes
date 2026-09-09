@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animax</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            min-height: 100vh;
+            background-color: #000000; 
+        }
+        header{
+            background-color: #ff8800;
+            color: #b33900;
+            text-align: center;
+            width: 100%;
+            padding: 16px;
+        }
+        main{
+            background-color: #000000;
+            color: #ffa600;
+            width: 100%; 
+            padding: 24px;
+        }
+        article{
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        article img{
+            width: 20%; 
+            height: auto;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        .conteudo-noticia {
+            flex: 1;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Animax</h1>
+        <p>Saiba mais sobre as últimas notícias do mundo dos animes.</p>
+    </header>
+    
+    <main>
+        <!-- PRIMEIRA NOTÍCIA CORRIGIDA (Agora dentro do article) -->
+        <article>
+            <img src="images.jpeg" alt="the detective is already dead">
+            <div class="conteudo-noticia">
+                <h2>Minha primeira notícia!</h2>
+                <p class="artigo-autor">Por: Yasmim Cris.</p>
+                <p>O Anime the detective is already dead acompanha o jovem Kimihiko Kimizuka, 
+                    cuja vida muda para sempre após aceitar ser assistente de Siesta, uma bela detetive
+                    de cabelos prateados confirma nova temporada, e ganhou um novo trailer com data de estreia oficial e novos nomes no elenco.
+                    A data de estreia oficialmente no dia 7 de outubro de 2026.
+                </p>
+                <button>❤️​<span>0</span></button>
+                <button>👍🏾<span>0</span></button>
+            </div>
+        </article>
+
+        <!-- SEGUNDA NOTÍCIA -->
+        <article>
+            <img src="ChatGPT Image 2 de set. de 2026, 09_15_44.png" alt="IDEB 2025">
+            <div class="conteudo-noticia">
+                <h2>IDEB 2025</h2>
+                <p class="artigo-autor">Por: Yasmim Cris.</p>
+                <p>Com muito effort e dedicação do alunos conseguiram aumentar 1,0 pontos des da ultima vez,
+                    mesmo em meio a o um ano muito complicado para todos me Rio Bonito do Iguaçu.
+                    No ano de 2025 Ro Bonito passou por uma tornado, vindo muitas difucudades no
+                    caminhar desses alunos, mas com muita determinação e incentivo dês de 2023.
+                </p>
+                <button>❤️​<span>0</span></button>
+                <button>👍🏾<span>0</span></button>
+            </div>
+        </article>
+
+        <!-- TERCEIRA NOTÍCIA -->
+        <article>
+            <img src="ChatGPT Image 2 de set. de 2026, 09_31_30.png" alt="Formados 2025">
+            <div class="conteudo-noticia">
+                <h2>Formados no Ano de 2025.</h2>
+                <p class="artigo-autor">Por: Yasmim Cris.</p>
+                <p>Texto da notícia dos formados aqui...</p>
+                <button>❤️​<span>0</span></button>
+                <button>👍🏾<span>0</span></button>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(function(botao) {
+            let curtiu = false;
+            botao.addEventListener("click", botaoClicado); 
+            
+            function botaoClicado(){
+                console.log("fui clicado");
+                let texto = botao.querySelector("span"); 
+                if (curtiu === false) {
+                    texto.textContent = parseInt(texto.textContent) + 1;
+                    curtiu = true;
+                } else {
+                    texto.textContent = parseInt(texto.textContent) - 1;
+                    curtiu = false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
